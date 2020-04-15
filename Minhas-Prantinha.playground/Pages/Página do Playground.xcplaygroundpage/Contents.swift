@@ -5,10 +5,12 @@ import PlaygroundSupport
 
 let font = UIFont(name: "Noteworthy", size: 35)
 let font2 = UIFont(name: "Noteworthy", size: 12)
-let font3 = UIFont(name: "Noteworthy", size: 29)
-let font4 = UIFont(name: "Noteworthy", size: 18)
+let font3 = UIFont(name: "Noteworthy", size: 17)
+let font4 = UIFont(name: "Noteworthy", size: 45)
 
 let folha = UIImage(named: "folha.png")
+
+var estado: Int = 0
 
 class Pranta: NSObject {
     var nome = ""
@@ -247,23 +249,32 @@ class SecondViewController: UIViewController {
     @objc func tapBonitona() {
         selecionou()
         button1.setImage(Bonitona, for: .normal)
-        
+        estado = 1
     }
+    
+
+    
+    
     @objc func tapSemCor() {
         selecionou()
         button2.setImage(SemCor, for: .normal)
+        estado = 2
+        
     }
     @objc func tapQueimada() {
         selecionou()
         button3.setImage(Queimada, for: .normal)
+        estado = 3
     }
     @objc func tapSecaMurcha() {
         selecionou()
         button4.setImage(SecaMurcha, for: .normal)
+        estado = 4
     }
     @objc func tapMortinha() {
         selecionou()
         button5.setImage(Mortinha, for: .normal)
+        estado = 5
     }
     
     
@@ -302,7 +313,6 @@ class ThirdViewController: UIViewController {
         label2.font = font
 
         
-        let botanico = UIImage(named: "botanico.png")
         
         let button = UIButton(frame: CGRect(x: 240, y: 500, width: 50, height: 50))
         button.setTitle("->", for: .normal)
@@ -432,21 +442,59 @@ class HomeViewController: UIViewController {
         backgroundView.frame = CGRect(x: 0, y: 0, width: 1000, height: 1000)
         
         let label = UILabel()
+        let label2 = UILabel()
+        let label3 = UILabel()
+
+        label.frame = CGRect(x: 70, y: 10, width: 300, height: 200)
+        label.text = "Minhas"
+        label.textColor = .black
+        label.adjustsFontSizeToFitWidth
+        label.font = font4
         
+        label3.frame = CGRect(x: 70, y: 60, width: 300, height: 200)
+        label3.text = "     Prantinha"
+        label3.textColor = .black
+        label3.adjustsFontSizeToFitWidth
+        label3.font = font4
+        
+        if estado == 1 {
+            
         let Bonitona = UIImage(named: "Bonitona.png")
         let vasoView = UIImageView(image: Bonitona)
-        vasoView.frame = CGRect(x: 30, y: 70, width: 175, height: 175)
+        vasoView.frame = CGRect(x: 30, y: 230, width: 150, height: 150)
         
-        label.frame = CGRect(x: 300, y: 30, width: 200, height: 200)
-        label.text = "Minhas \n        Prantinha"
-        label.textColor = .black
-        label.numberOfLines = 2
-        label.adjustsFontSizeToFitWidth
-        label.font = font3
         
+
+        
+        label2.frame = CGRect(x: 200, y: 200, width: 300, height: 200)
+        label2.text = "   Ai, que coisa linda! \n Continue assim,\n sua prantinha agradece!"
+        label2.textColor = .black
+        label2.numberOfLines = 4
+        label2.adjustsFontSizeToFitWidth
+        label2.font = font3
+        }
+        
+        if estado == 2 {
+            
+            let Bonitona = UIImage(named: "Bonitona.png")
+            let vasoView = UIImageView(image: Bonitona)
+            vasoView.frame = CGRect(x: 30, y: 230, width: 150, height: 150)
+            
+            
+            label2.frame = CGRect(x: 200, y: 200, width: 300, height: 200)
+            label2.text = "   Texto 2 \n Continue assim,\n sua prantinha agradece!"
+            label2.textColor = .black
+            label2.numberOfLines = 4
+            label2.adjustsFontSizeToFitWidth
+            label2.font = font3
+            
+        }
+        
+        view.addSubview(backgroundView)
         view.addSubview(vasoView)
         view.addSubview(label)
-        view.addSubview(backgroundView)
+        view.addSubview(label2)
+        view.addSubview(label3)
         self.view = view
     }
 }
@@ -497,6 +545,15 @@ home.color = .white
 let itemImage2 = UIImage(named: "coracaotab.png")
 home.tabBarItem = UITabBarItem(title: nil, image: itemImage2, tag: 0)
 home.title = "Minhas Prantinha"
+//home.addTarget(nil, action: #selector(verificaestado), for: .touchUpInside)
+
+
+//@objc func verificaestado() {
+//    estado4.setImage(canvasclicado, for: .normal)
+//    estado4.addTarget(nil, action: #selector(tapestado4b), for: .touchUpInside)
+//
+//
+//}
 
 //: A terceira tela será verde, de cor e de título.
 // the green controller
