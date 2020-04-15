@@ -3,8 +3,5 @@
     <pages>
         <page name='Página do Playground'/>
         <page name='testes2'/>
-        <page name='botao animado ver depois'/>
-        <page name='janela na metade'/>
-        <page name='janela na metade 2'/>
     </pages>
 </playground>
