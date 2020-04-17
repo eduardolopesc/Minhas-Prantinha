@@ -9,6 +9,17 @@ let font3 = UIFont(name: "Noteworthy", size: 17)
 let font4 = UIFont(name: "Noteworthy", size: 45)
 let font5 = UIFont(name: "Noteworthy", size: 14)
 
+var estados1: Bool = false
+var estados2: Bool = false
+var estados3: Bool = false
+var estados4: Bool = false
+var estados5: Bool = false
+var estados6: Bool = false
+
+let SetaCurva = UIImage(named: "SetaCurva.png")
+let setinha2 = UIImage(named: "SetaCurva2.png")
+let setinha = UIImageView(image: SetaCurva)
+
 
 let folha = UIImage(named: "seta.png")
 
@@ -51,7 +62,7 @@ class HojeViewController: UIViewController {
     let buttons = UIButton()
     
     let button = UIButton(frame: CGRect(x: 290, y: 540, width: 50, height: 50))
-
+    
     
     override func loadView() {
         let view = UIView()
@@ -104,7 +115,7 @@ class HojeViewController: UIViewController {
         manjericão.isHidden = true
         manjericão.backgroundColor = .white
         manjericão.titleLabel?.font = font3
-
+        
         
         arruda.frame = CGRect(x: 107, y: 508, width: 145, height: 28)
         arruda.setTitle("Arruda", for: .normal)
@@ -187,7 +198,7 @@ class SecondViewController: UIViewController {
     let ComManchaslabel = UILabel()
     let SecaMurchalabel = UILabel()
     let Mortinhalabel = UILabel()
-
+    
     
     
     
@@ -299,7 +310,7 @@ class SecondViewController: UIViewController {
         button4.setImage(SecaMurchaS, for: .normal)
         button5.setImage(MortinhaS, for: .normal)
         button.isHidden = false
-
+        
         
         
     }
@@ -366,11 +377,14 @@ class ThirdViewController: UIViewController {
     let linha1 = UILabel()
     let linha2 = UILabel()
     
+    
+    
     override func loadView() {
         let view = UIView()
         view.backgroundColor = .white
         
-
+        
+        
         
         let background = UIImage(named: "background.png")
         let backgroundView = UIImageView(image: background)
@@ -400,8 +414,8 @@ class ThirdViewController: UIViewController {
         estado1.layer.borderWidth = 1
         estado1.backgroundColor = .clear
         estado1.layer.borderColor = UIColor.black.cgColor
-
-
+        
+        
         
         estado2.addTarget(nil, action: #selector(tapestado2), for: .touchUpInside)
         estado2.setImage(solmais, for: .normal)
@@ -452,7 +466,6 @@ class ThirdViewController: UIViewController {
         linha2.adjustsFontSizeToFitWidth
         linha2.font = font2
         
-        
         view.addSubview(backgroundView)
         view.addSubview(button)
         view.addSubview(estado1)
@@ -472,50 +485,51 @@ class ThirdViewController: UIViewController {
     
     @objc func tapButton() {
         chamasegundatela()
+        setinha.isHidden = true
         
         if estado == 1 {
-        vasoView4.image = UIImage(named: "Bonitona.png")
-        textoHome.text = "Ai, que coisa linda! \n\nContinue assim,\nsua prantinha agradece!"
+            vasoView4.image = UIImage(named: "Bonitona.png")
+            textoHome.text = "Ai, que coisa linda! \n\nContinue assim,\nsua prantinha agradece!"
             textoHome2.text = "Dê uma olhada no diário só para manter\n         todo cuidado que você já vem tendo"
             vasoView4.frame = CGRect(x: 30, y: 300, width: 150, height: 150)
-
+            
         }
         
         if estado == 2 {
-        vasoView4.image = UIImage(named: "SemCor.png")
+            vasoView4.image = UIImage(named: "SemCor.png")
             textoHome.text = "Tá bem clarinha, né? \n\nPor que não bota ela no\nSol pra pegar uma cor?"
-                        textoHome2.text = "Dê uma olhada no diário para ver direitinho\n         e não perder o ritmo dos cuidados"
+            textoHome2.text = "Dê uma olhada no diário para ver direitinho\n         e não perder o ritmo dos cuidados"
             vasoView4.frame = CGRect(x: 30, y: 300, width: 150, height: 150)
-
-
-
+            
+            
+            
         }
         
         if estado == 3 {
-        vasoView4.image = UIImage(named: "Queimada.png")
+            vasoView4.image = UIImage(named: "Queimada.png")
             textoHome.text = "Uma manchinha aqui,\noutra alí... \n\nTalvez ela esteja tomando\n muito Sol e se queimou!"
             textoHome2.text = "Dê uma olhada no diário para ver direitinho\n         e não perder o ritmo dos cuidados"
             vasoView4.frame = CGRect(x: 30, y: 300, width: 150, height: 150)
-
-
+            
+            
         }
         
         if estado == 4 {
-        vasoView4.image = UIImage(named: "SecaMurcha.png")
+            vasoView4.image = UIImage(named: "SecaMurcha.png")
             textoHome.text = "Secou, a coitada...\n\n Isso deve ser falta de água, viu?"
             textoHome2.text = "Dê uma olhada no diário em tudo que foi\n         feito nesses dias para ver o que faltou"
             vasoView4.frame = CGRect(x: 30, y: 280, width: 150, height: 150)
-
-
+            
+            
         }
         
         if estado == 5 {
-        vasoView4.image = UIImage(named: "Mortinha.png")
+            vasoView4.image = UIImage(named: "Mortinha.png")
             textoHome.text = "Não se desespere!\n\nAlgumas vezes pode\nparecer que já era...\nMas tente dar mais\natenção, carinho e água!"
             textoHome2.text = "Dê uma olhada no diário em tudo que foi\n         feito nesses dias para ver o que faltou"
             vasoView4.frame = CGRect(x: 30, y: 280, width: 150, height: 150)
-
-
+            
+            
         }
         
         
@@ -533,83 +547,85 @@ class ThirdViewController: UIViewController {
         textoHome2.font = font3
         
         
-
-
-
-
-
         
-
-
-
+        
+        
+        
+        
+        
+        
+        
+        
     }
     @objc func tapestado1b() {
         estado1.setImage(gota, for: .normal)
         estado1.addTarget(nil, action: #selector(tapestado1), for: .touchUpInside)
+        estados1 = true
         
     }
     @objc func tapestado2b() {
         estado2.setImage(solmais, for: .normal)
         estado2.addTarget(nil, action: #selector(tapestado2), for: .touchUpInside)
-        
+        estados2 = true
     }
     @objc func tapestado3b() {
         estado3.setImage(trocaVaso, for: .normal)
         estado3.addTarget(nil, action: #selector(tapestado3), for: .touchUpInside)
-        
+        estados3 = true
         
     }
     @objc func tapestado4b() {
         estado4.setImage(solo, for: .normal)
         estado4.addTarget(nil, action: #selector(tapestado4), for: .touchUpInside)
-        
+        estados4 = true
         
     }
     @objc func tapestado5b() {
         estado5.setImage(solmenos, for: .normal)
         estado5.addTarget(nil, action: #selector(tapestado5), for: .touchUpInside)
-        
+        estados5 = true
         
     }
     @objc func tapestado6b() {
         estado6.setImage(etc, for: .normal)
         estado6.addTarget(nil, action: #selector(tapestado6), for: .touchUpInside)
-        
+        estados6 = true
         
     }
     @objc func tapestado1() {
         estado1.setImage(gotaS, for: .normal)
         estado1.addTarget(nil, action: #selector(tapestado1b), for: .touchUpInside)
+        estados1 = false
         
     }
     @objc func tapestado2() {
         estado2.setImage(solmaisS, for: .normal)
         estado2.addTarget(nil, action: #selector(tapestado2b), for: .touchUpInside)
-        
+        estados2 = false
         
     }
     @objc func tapestado3() {
         estado3.setImage(trocaVasoS, for: .normal)
         estado3.addTarget(nil, action: #selector(tapestado3b), for: .touchUpInside)
-        
+        estados3 = false
         
     }
     @objc func tapestado4() {
         estado4.setImage(soloS, for: .normal)
         estado4.addTarget(nil, action: #selector(tapestado4b), for: .touchUpInside)
-        
+        estados4 = false
         
     }
     @objc func tapestado5() {
         estado5.setImage(solmenosS, for: .normal)
         estado5.addTarget(nil, action: #selector(tapestado5b), for: .touchUpInside)
-        
+        estados5 = false
         
     }
     @objc func tapestado6() {
         estado6.setImage(etcS, for: .normal)
         estado6.addTarget(nil, action: #selector(tapestado6b), for: .touchUpInside)
-        
+        estados6 = false
         
     }
     
@@ -624,8 +640,12 @@ class HomeViewController: UIViewController {
         
         vasoView4.image = UIImage(named: "Escolha.png")
         textoHome.text = "Você ainda não me contou sobre\nsuas prantinhas!"
-        textoHome2.text = "Vá na seção Hoje\n      e me conte tudo!"
-            vasoView4.frame = CGRect(x: 30, y: 300, width: 150, height: 150)
+        textoHome2.text = "Vá na seção Hoje\n         e me conte tudo!"
+        vasoView4.frame = CGRect(x: 30, y: 300, width: 150, height: 150)
+        
+        setinha.frame = CGRect(x: 50, y: 550, width: 30, height: 30)
+        
+        
         
         let background = UIImage(named: "background.png")
         let backgroundView = UIImageView(image: background)
@@ -658,14 +678,15 @@ class HomeViewController: UIViewController {
         textoHome2.adjustsFontSizeToFitWidth
         textoHome2.font = font3
         
-    
+        
         viewHome.addSubview(backgroundView)
         viewHome.addSubview(label)
         viewHome.addSubview(label3)
         viewHome.addSubview(textoHome)
         viewHome.addSubview(textoHome2)
         viewHome.addSubview(vasoView4)
-
+        viewHome.addSubview(setinha)
+        
         self.view = viewHome
     }
 }
@@ -677,15 +698,42 @@ class LogViewController: UIViewController {
     var color: UIColor = #colorLiteral(red: 0.831372549, green: 0.568627451, blue: 0.1490196078, alpha: 1)
     
     override func loadView() {
-        let view = UIView()
-        view.backgroundColor = self.color
+        let logview = UIView()
+        logview.backgroundColor = self.color
+        
+        let label = UILabel()
+        let labeldiariofixo = UILabel()
+        let labeldiario = UILabel()
+        
+        label.frame = CGRect(x: 70, y: 15, width: 300, height: 200)
+        label.text = "Diário"
+        label.textColor = .black
+        label.adjustsFontSizeToFitWidth
+        label.font = font4
+        
+        labeldiariofixo.frame = CGRect(x: 70, y: 75, width: 500, height: 300)
+        labeldiariofixo.text = "na Quinta (16/04) você:\n - Regou\n - Deu mais Sol\n      à sua prantinha de Arruda"
+        labeldiariofixo.textColor = .black
+        labeldiariofixo.adjustsFontSizeToFitWidth
+        labeldiariofixo.font = font3
+        labeldiariofixo.numberOfLines = 6
+        
+        
+        labeldiario.frame = CGRect(x: 70, y: 300, width: 500, height: 300)
+        labeldiario.text = "Sexta (hoje) você:"
+        labeldiario.textColor = .black
+        labeldiario.adjustsFontSizeToFitWidth
+        labeldiario.font = font3
         
         let background = UIImage(named: "background.png")
         let backgroundView = UIImageView(image: background)
         backgroundView.frame = CGRect(x: 0, y: 0, width: 1000, height: 1000)
         
-        view.addSubview(backgroundView)
-        self.view = view
+        
+        logview.addSubview(label)
+        logview.addSubview(labeldiariofixo)
+        logview.addSubview(backgroundView)
+        self.view = logview
     }
 }
 
@@ -716,18 +764,7 @@ home.color = .white
 let itemImage2 = UIImage(named: "coracaotab.png")
 home.tabBarItem = UITabBarItem(title: nil, image: itemImage2, tag: 0)
 home.title = "Minhas Prantinha"
-//home.addTarget(nil, action: #selector(verificaestado), for: .touchUpInside)
 
-
-//@objc func verificaestado() {
-//    estado4.setImage(canvasclicado, for: .normal)
-//    estado4.addTarget(nil, action: #selector(tapestado4b), for: .touchUpInside)
-//
-//
-//}
-
-//: A terceira tela será verde, de cor e de título.
-// the green controller
 let log = LogViewController()
 log.color = .white
 log.title = "Verde"
